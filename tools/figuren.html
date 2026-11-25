@@ -1,0 +1,9 @@
+<!doctype html><html lang="nl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../core.css"><link rel="stylesheet" href="../vak.css"></head><body><main id="app"></main>
+<script src="../core.js"></script><script src="../vak.js"></script><script src="../figs.js"></script><script src="../figs-transport.js"></script><script src="../figs-genetica.js"></script>
+<script>
+const S = TW._S, app = document.getElementById("app"); const q = new URLSearchParams(location.search);
+const only = q.get("f"); let h = "";
+Object.keys(S.figs).forEach((n) => { if (only && !only.split(",").includes(n)) return; h += `<h3>${n}</h3><div class="card figkaart">${S.figs[n](false)}</div>` + (q.get("q") ? `<div class="card figkaart">${S.figs[n](true)}</div>` : ""); });
+app.innerHTML = h;
+</script></body></html>

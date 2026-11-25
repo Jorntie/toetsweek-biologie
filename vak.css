@@ -1,0 +1,186 @@
+/* Eigen stijl van dit vak (bovenop core.css). */
+:root {
+  --o2rijk: #d2413c;      /* zuurstofrijk bloed */
+  --o2arm: #3a66c4;       /* zuurstofarm bloed */
+  --spier: #e9b2a6;       /* hartspier, vaatwand */
+  --spier-d: #b9695b;
+  --plasma: #ecd27a;      /* bloedplasma, weefselvloeistof */
+  --lymfe: #8fbf5a;       /* lymfe */
+  --base-a: #2f9e5e;
+  --base-t: #d2413c;
+  --base-u: #d9731a;
+  --base-c: #3a66c4;
+  --base-g: #a67c00;
+  --nieuw: #c2409a;       /* nieuwe DNA-streng */
+  --op-kleur: #ffffff;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --o2rijk: #f0736c;
+    --o2arm: #6f9bf2;
+    --spier: #7a4a44;
+    --spier-d: #c98f85;
+    --plasma: #a8923f;
+    --lymfe: #86b657;
+    --base-a: #3fb574;
+    --base-t: #e8635d;
+    --base-u: #eb9440;
+    --base-c: #6f9bf2;
+    --base-g: #cfa52a;
+    --nieuw: #e678c3;
+    --op-kleur: #14161b;
+  }
+}
+
+/* ---------- figuren ---------- */
+.fig .zr { fill: var(--o2rijk); }
+.fig .za { fill: var(--o2arm); }
+.fig .lzr { stroke: var(--o2rijk); fill: none; }
+.fig .lza { stroke: var(--o2arm); fill: none; }
+.fig .spier { fill: var(--spier); stroke: var(--spier-d); stroke-width: 1.5; }
+.fig .wand { stroke: var(--spier-d); fill: none; }
+.fig .lspier { stroke: var(--spier); fill: none; }
+.fig .plasma { fill: var(--plasma); }
+.fig .lplasma { stroke: var(--plasma); fill: none; }
+.fig .lymfe { fill: var(--lymfe); }
+.fig .llymfe { stroke: var(--lymfe); fill: none; }
+.fig .wit { fill: var(--card); stroke: var(--muted); stroke-width: 1.2; }
+.fig .kaart { fill: var(--card); }
+.fig .zacht { fill: var(--accent-soft); stroke: var(--accent); stroke-width: 1.2; }
+.fig .grijs { fill: var(--line); }
+.fig .lgrijs { stroke: var(--muted); stroke-width: 1.2; fill: none; }
+.fig .acc { fill: var(--accent); }
+.fig .lacc { stroke: var(--accent); fill: none; }
+.fig .or { fill: var(--oranje); }
+.fig .lor { stroke: var(--oranje); fill: none; }
+.fig .nieuw { stroke: var(--nieuw); fill: none; }
+.fig .vnieuw { fill: var(--nieuw); }
+.fig .geel { fill: var(--geel); stroke: var(--muted); stroke-width: 1; }
+.fig .bA { fill: var(--base-a); }
+.fig .bT { fill: var(--base-t); }
+.fig .bU { fill: var(--base-u); }
+.fig .bC { fill: var(--base-c); }
+.fig .bG { fill: var(--base-g); }
+.fig text.op { fill: var(--op-kleur); font-weight: 700; }
+.fig text.mono { font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace; font-size: 12px; }
+.fig text.m { fill: var(--muted); }
+.fig text.tzr { fill: var(--o2rijk); }
+.fig text.tza { fill: var(--o2arm); }
+.fig text.tn { fill: var(--nieuw); }
+.fig .nrb { fill: var(--text); }
+.fig text.nrt { fill: var(--card); font-weight: 700; font-size: 11px; }
+.fig .pijl { stroke: currentColor; stroke-width: 1.5; fill: none; }
+.fig .pk { fill: currentColor; }
+.fig .dun { stroke-width: 1; }
+.fig .dik { stroke-width: 3; }
+
+/* codontabel (figuur en widget) */
+.codontabel { display: grid; grid-template-columns: 18px repeat(4, 1fr); gap: 3px; font-size: 11px; line-height: 1.25; max-width: 420px; margin: 0 auto; }
+.codontabel .h { font-weight: 700; text-align: center; color: var(--muted); align-self: center; }
+.codontabel .c { border: 1.5px solid var(--line); border-radius: 8px; padding: 3px 3px; background: var(--card); color: var(--text); font: inherit; font-size: 11px; text-align: left; min-height: 62px; margin: 0; }
+.codontabel .c span { display: block; white-space: nowrap; font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace; }
+.codontabel .c span i { font-style: normal; color: var(--muted); font-family: ui-rounded, system-ui, sans-serif; }
+.codontabel .c span.start i { color: var(--good); font-weight: 700; }
+.codontabel .c span.stop i { color: var(--bad); font-weight: 700; }
+.codontabel button.c { cursor: pointer; }
+.codontabel button.c.sel { border-color: var(--accent); background: var(--accent-soft); box-shadow: 0 0 0 2px var(--accent); }
+.codontabel .cap { grid-column: 1 / -1; color: var(--muted); font-size: 12px; text-align: center; }
+
+/* ---------- widgets ---------- */
+.tw-w .stap { color: var(--muted); font-size: 13px; text-transform: uppercase; letter-spacing: .04em; font-weight: 700; margin: 4px 0 2px; }
+.tw-w .opdracht { font-weight: 600; margin: 4px 0 10px; }
+.tw-w .fbk { border-radius: 12px; padding: 9px 12px; margin: 10px 0; background: var(--accent-soft); font-size: 15px; }
+.tw-w .fbk.ok { background: var(--good-soft); }
+.tw-w .fbk.nok { background: var(--bad-soft); }
+.tw-w .fbk:empty { display: none; }
+.tw-w .knoppen { display: flex; flex-wrap: wrap; gap: 8px; margin: 10px 0; }
+.tw-w .knoppen .btn { flex: 1 1 auto; min-height: 44px; }
+.tw-w .kolom .btn { display: block; width: 100%; text-align: left; margin: 8px 0; min-height: 44px; font-weight: 500; }
+.tw-w .score-r { display: flex; justify-content: space-between; color: var(--muted); font-size: 14px; margin: 4px 0; }
+.tw-w .tabs { display: flex; gap: 6px; margin: 4px 0 12px; overflow-x: auto; }
+.tw-w .tabs .btn { flex: 1 0 auto; font-size: 14px; padding: 9px 10px; min-height: 42px; }
+.tw-w .tabs .btn.aan { background: var(--accent); color: var(--op-accent, #fff); border-color: var(--accent); outline: 0; }
+.tw-w .klein { font-size: 14px; color: var(--muted); }
+
+/* basen */
+.basen { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin: 10px 0; }
+.base-k { appearance: none; border: 0; border-radius: 12px; min-height: 48px; font: inherit; font-weight: 800; font-size: 1.2rem; color: var(--op-kleur); cursor: pointer; }
+.base-k:disabled { opacity: .35; }
+.b-A { background: var(--base-a); } .b-T { background: var(--base-t); } .b-U { background: var(--base-u); } .b-C { background: var(--base-c); } .b-G { background: var(--base-g); }
+.streng { display: flex; flex-wrap: wrap; gap: 3px; align-items: center; margin: 3px 0; }
+.streng .eind { font-size: 12px; color: var(--muted); font-weight: 700; min-width: 16px; text-align: center; }
+.streng .lab { flex: 1 0 100%; font-size: 12px; color: var(--muted); margin-top: 6px; }
+.nt { width: 24px; height: 30px; border-radius: 6px; display: inline-flex; align-items: center; justify-content: center; font-weight: 800; font-size: 14px; color: var(--op-kleur); font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace; }
+.nt.leeg { background: var(--line); color: var(--muted); }
+.nt.nu { outline: 2.5px solid var(--accent); outline-offset: 1px; background: var(--accent-soft); color: var(--accent); }
+.nt.mut { outline: 2.5px solid var(--bad); outline-offset: 1px; }
+.nt.weg { opacity: .3; text-decoration: line-through; }
+.nt.gap { margin-left: 7px; }
+button.nt { appearance: none; border: 0; cursor: pointer; padding: 0; width: 28px; height: 42px; }
+.keten { display: flex; flex-wrap: wrap; gap: 4px; align-items: center; margin: 6px 0; min-height: 34px; }
+.az { border-radius: 99px; padding: 5px 9px; font-size: 13px; font-weight: 700; background: var(--accent-soft); border: 1.5px solid var(--accent); color: var(--text); }
+.az.stop { border-color: var(--bad); background: var(--bad-soft); }
+.az.anders { border-color: var(--oranje); background: color-mix(in srgb, var(--oranje) 18%, var(--card)); }
+.az.zelfde { opacity: .75; }
+.az.leeg { border-style: dashed; color: var(--muted); background: none; }
+.keten .lab { flex: 1 0 100%; font-size: 12px; color: var(--muted); }
+@keyframes schud { 0%, 100% { transform: translateX(0); } 25% { transform: translateX(-5px); } 75% { transform: translateX(5px); } }
+.schud { animation: schud .25s 2; }
+@keyframes pop { 0% { transform: scale(.6); opacity: .3; } 100% { transform: scale(1); opacity: 1; } }
+.pop { animation: pop .25s; }
+
+/* tikbare SVG-onderdelen */
+.fig .tik { cursor: pointer; }
+.fig .knoop rect { fill: var(--card); stroke: var(--muted); stroke-width: 1.5; }
+.fig .knoop.gedaan rect { fill: var(--good-soft); stroke: var(--good); stroke-width: 2.5; }
+.fig .knoop.start rect { fill: var(--accent-soft); stroke: var(--accent); stroke-width: 2.5; }
+.fig .knoop.doel rect { stroke: var(--accent); stroke-width: 2.5; stroke-dasharray: 5 3; }
+.fig .knoop.mis rect { fill: var(--bad-soft); stroke: var(--bad); stroke-width: 2.5; }
+.fig .hot { fill: var(--accent); fill-opacity: 0; stroke: none; cursor: pointer; }
+.fig .hot.goed { fill: var(--good); fill-opacity: .5; }
+.fig .hot.mis { fill: var(--bad); fill-opacity: .5; }
+.fig .hot.toon { fill: var(--geel); fill-opacity: .7; }
+@keyframes stroom { to { stroke-dashoffset: -24; } }
+.fig .stroom { stroke-dasharray: 6 6; animation: stroom .8s linear infinite; }
+.fig .zacht-anim { transition: transform .35s ease; }
+
+/* kruisingsschema */
+.punnett { border-collapse: separate; border-spacing: 4px; margin: 8px auto; }
+.punnett th { font-weight: 700; min-width: 52px; height: 44px; text-align: center; color: var(--accent); background: var(--accent-soft); border-radius: 10px; padding: 2px 6px; }
+.punnett th.hoek { background: none; color: var(--muted); font-size: 12px; font-weight: 600; }
+.punnett td { padding: 0; }
+.punnett td button { appearance: none; font: inherit; font-weight: 600; color: var(--text); width: 100%; min-width: 84px; min-height: 50px; border: 1.5px dashed var(--muted); border-radius: 10px; background: var(--card); cursor: pointer; }
+.punnett td button.vol { border-style: solid; border-color: var(--line); }
+.punnett td button.sel { border-color: var(--accent); border-style: solid; box-shadow: 0 0 0 2px var(--accent); }
+.punnett td button.goed { border-color: var(--good); border-style: solid; background: var(--good-soft); }
+.punnett td button.fout { border-color: var(--bad); border-style: solid; background: var(--bad-soft); }
+.punnett td button.dood { text-decoration: line-through; opacity: .6; }
+.ouder { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin: 8px 0; }
+.ouder b { flex: 1 0 100%; font-size: 14px; }
+.chip.groot { min-height: 44px; min-width: 52px; text-align: center; font-weight: 700; }
+.chip.aan { border-color: var(--accent); background: var(--accent-soft); box-shadow: 0 0 0 2px var(--accent); }
+
+/* stamboom */
+.fig .pers { fill: var(--card); stroke: currentColor; stroke-width: 1.8; }
+.fig .pers.ziek { fill: currentColor; }
+.fig .pers.vraag { stroke: var(--accent); stroke-width: 3.5; }
+.fig .pers.klaar { stroke: var(--good); stroke-width: 3.5; }
+.fig text.gen { font-size: 11px; font-weight: 700; fill: var(--accent); }
+
+@media (prefers-reduced-motion: reduce) { .fig .stroom { stroke-dasharray: none; } }
+
+/* kruisingsschema 4 x 4 */
+.punnett.vier { border-spacing: 3px; }
+.punnett.vier th { min-width: 34px; height: 36px; font-size: 13px; padding: 1px 3px; }
+.punnett.vier td button { min-width: 0; width: 100%; min-height: 40px; font-size: 13px; padding: 0 2px; }
+/* widgets transport */
+.hartvak .fig, .somvak .fig, .drukvak .fig, .haarvak .fig { width: 100%; height: auto; display: block; }
+.tw-w .vink { display: flex; align-items: center; gap: 10px; min-height: 44px; font-size: 15px; }
+.tw-w .vink input { width: 22px; height: 22px; accent-color: var(--accent); }
+.fig .knoop.mis rect, .fig .knoop.gedaan rect, .fig .knoop.start rect { transition: fill .2s; }
+.fig .knoop.hd rect { stroke: transparent; stroke-width: 3.5; }
+.fig .knoop.hd.gedaan rect { stroke: var(--good); }
+.fig .knoop.hd.mis rect { stroke: var(--bad); }
+.fig .knoop.hd.start rect { stroke: var(--accent); }
+.fig .knoop text.volg { font-size: 13px; }
+.tw-w .opdracht { color: var(--text); }
